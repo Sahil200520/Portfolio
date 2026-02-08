@@ -289,3 +289,66 @@ footer {
         padding: 0 15px;
     }
 }
+
+/* About Section Flex Layout */
+.about-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.info-grid {
+    display: flex;
+    gap: 50px;
+}
+
+/* Image Styling - Exactly like your screenshot */
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-img {
+    width: 280px; /* Size adjust kar sakte hain */
+    height: auto;
+    border-radius: 20px; /* Screenshot jaisa rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Halka shadow */
+    border: 1px solid #ddd;
+    object-fit: cover;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .about-flex {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .info-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .about-image {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+}
