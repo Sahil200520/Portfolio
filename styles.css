@@ -369,3 +369,18 @@ footer {
     background-color: #0056b3; /* Hover karne par dark blue */
     color: white;
 }
+
+.logo-container {
+    padding: 10px;
+}
+
+.site-logo {
+    height: 50px;    /* Aap apne hisaab se height adjust kar sakte hain */
+    width: auto;      /* Isse logo ka ratio nahi bigdega */
+    display: block;
+    transition: transform 0.3s ease; /* Hover effect ke liye */
+}
+
+.site-logo:hover {
+    transform: scale(1.1); /* Mouse le jaane par halka bada hoga */
+}
