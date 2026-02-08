@@ -352,3 +352,20 @@ footer {
         margin-bottom: 30px;
     }
 }
+.cert-btn {
+    background-color: #007bff; /* Blue color */
+    color: white !important; /* Text color white */
+    padding: 5px 12px; /* Button ke andar ki jagah */
+    text-decoration: none; /* Underline hatane ke liye */
+    border-radius: 6px; /* Corners ko round karne ke liye */
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    margin: 0 5px;
+}
+
+.cert-btn:hover {
+    background-color: #0056b3; /* Hover karne par dark blue */
+    color: white;
+}
