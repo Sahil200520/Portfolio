@@ -375,7 +375,7 @@ footer {
 }
 
 .site-logo {
-    height: 50px;    /* Aap apne hisaab se height adjust kar sakte hain */
+    height: 70px;    /* Aap apne hisaab se height adjust kar sakte hain */
     width: auto;      /* Isse logo ka ratio nahi bigdega */
     display: block;
     transition: transform 0.3s ease; /* Hover effect ke liye */
@@ -395,4 +395,33 @@ footer {
     height: auto;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Mobile Nav-bar Fix (New Code) --- */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: row !important; /* Forces items in a row */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 0;
+        list-style: none;
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .site-logo {
+        height: 40px;
+        margin: 0 auto;
+    }
 }
