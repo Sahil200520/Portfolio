@@ -384,3 +384,15 @@ footer {
 .site-logo:hover {
     transform: scale(1.1); /* Mouse le jaane par halka bada hoga */
 }
+.thank-you-section {
+    background-color: #f4f4f4; /* Light gray background */
+    border-bottom: 2px solid #007bff; /* Optional blue line */
+}
+
+.thank-you-img {
+    max-width: 400px; /* Image ka size control karne ke liye */
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
