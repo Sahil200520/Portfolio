@@ -98,20 +98,23 @@
       <div class="about-grid">
         <div class="about-text">
           <p>
-            I am a Cybersecurity and Computer Science Engineer pursuing my Bachelor of Technology degree at
-            <strong>Lovely Professional University</strong>, with a specialized minor in Cybersecurity. My academic
-            journey is driven by an intense curiosity to understand adversarial attack vectors and construct robust
-            defenses to counter them.
+            I am a B.Tech Computer Science and Engineering student at <strong>Lovely Professional University (LPU)
+            </strong> with a strong
+            passion for Cybersecurity, specializing in Digital Forensics & Incident Response (DFIR) and Security
+            Operations Center (SOC). I enjoy investigating security incidents, analyzing logs, identifying threats, and
+            understanding attacker behavior using real-world Blue Team methodologies.
           </p>
           <p>
-            With training focused on digital forensics, enterprise system security, and incident response, I have gained
-            hands-on experience identifying security gaps, writing automated parsing scripts, and auditing server
-            integrity.
+            I have hands-on experience with Linux Administration, Bash Scripting, SIEM, Splunk, Wazuh, Wireshark,
+            Volatility Framework, Autopsy, FTK Imager, MITRE ATT&CK, NIST Cybersecurity Framework, and OSINT. Through
+            internships, training, and practical cybersecurity projects, I have developed skills in threat detection,
+            log analysis, phishing investigation, incident response, and digital forensic analysis
           </p>
           <p>
-            I am actively preparing for the Red Hat Certified System Administrator (RHCSA) exam and seeking
-            opportunities as an entry-level SOC Analyst or Security Associate where I can apply security frameworks
-            (such as MITRE ATT&amp;CK and NIST CSF) to protect critical infrastructure.
+            Currently, I am continuously strengthening my Blue Team expertise by building real-world security
+            projects, solving cybersecurity labs, and learning advanced DFIR and SOC techniques. My goal is to start my
+            career as a DFIR Analyst or SOC Analyst, contributing to effective threat detection, incident response, and
+            digital investigations while helping organizations improve their overall security posture.
           </p>
         </div>
         <div class="about-stats monospace">
@@ -120,14 +123,6 @@
             <p>B.Tech in CSE (Cybersecurity Minor)</p>
             <p style="font-size: 0.85rem; font-weight: normal; color: var(--text-secondary); margin-top: 0.25rem;">
               Lovely Professional University</p>
-          </div>
-          <div class="stat-box">
-            <h4>[CERT_CREDENTIALS]</h4>
-            <p>RHCSA &amp; Oracle AI Associate</p>
-          </div>
-          <div class="stat-box">
-            <h4>[CORE_FOCUS]</h4>
-            <p>SOC Ops, Log Auditing, UFW Hardening</p>
           </div>
         </div>
       </div>
@@ -195,12 +190,14 @@
             <div class="card-header">
               <!-- <span class="tag monospace">[SEC_TOOL // AUTOMATION]</span> -->
             </div>
-            <h3>Ultimate Phishing Analyzer v3.0</h3>
+            <h3>Network-Forensics</h3>
             <p>
-              A Bash-based automated OSINT utility designed to perform multi-layered URL inspection. Integrates the
-              VirusTotal API to cross-verify reputations and automates domain age audits and SSL/TLS validation via
-              OpenSSL. Auto-generates high-integrity triage logs in under 5 seconds with a 95% detection accuracy,
-              drastically shortening threat analysis cycles.
+              Spearheaded a network forensics workflow to detect malicious activity by deploying automated packet
+              capturing scripts to sniff network interfaces and monitor unauthorized traffic in real time.
+              Mitigated the complexity of raw network analysis by engineering custom text-filtering logic in Linux to
+              parse raw logs, instantly separating critical network alerts from standard background traffic.
+              Accelerated digital forensics triage through an automated reporting mechanism that logs suspicious
+              connection attempts, delivering structured threat summaries ready for deeper security investigations.
             </p>
             <div class="badges" aria-label="Tech Stack">
               <span class="badge monospace">[Bash]</span>
@@ -212,7 +209,7 @@
             <div class="card-footer mt-6">
               <a href="https://github.com/Sahil200520" target="_blank" rel="noopener noreferrer"
                 class="read-more monospace" style="font-size: 0.85rem;">
-                [LINK: REPOSITORY] <span class="arrow">→</span>
+                [LINK: https://github.com/Sahil200520/Network_Forensics_Project-] <span class="arrow">→</span>
               </a>
             </div>
           </div>
@@ -222,25 +219,29 @@
         <div class="card col-6">
           <div class="card-inner">
             <div class="card-header">
-              <span class="tag monospace">[DEF_TOOL // SOCK_HONEY]</span>
+              <!-- <span class="tag monospace">[DEF_TOOL // SOCK_HONEY]</span> -->
             </div>
-            <h3>Honey-Trigger</h3>
+            <h3>Phishing-Detection</h3>
             <p>
-              A custom low-interaction socket honeypot script engineered to monitor targeted unused ports for
-              unauthorized scans and connection attempts. Logs incoming request payloads, indexes attacking IPs, and
-              features trigger actions to automatically update local firewall wrappers (UFW/iptables) to quarantine
-              hostile actors in real-time.
+              Created a secure Shell-based framework to analyze suspicious URLs by scripting a modular Bash tool that
+              integrates VirusTotal API, SSL/TLS, and WHOIS lookups, reducing manual verification time by 40%.
+              Resolved raw data parsing bottlenecks in web investigations by engineering custom JSON extraction and
+              text-filtering logic within Linux, cutting threat verdict response times to under 5 seconds.
+              Optimized incident response workflows through an automated reporting module that compiles API scores,
+              domain age, and SSL flags into plain-text logs, successfully accelerating initial triage for Blue Team
+              analysis.
             </p>
             <div class="badges" aria-label="Tech Stack">
-              <span class="badge monospace">[Python]</span>
-              <span class="badge monospace">[Sockets]</span>
-              <span class="badge monospace">[UFW_API]</span>
-              <span class="badge monospace">[Linux_Hardening]</span>
+              <span class="badge monospace">[Bash]</span>
+              <span class="badge monospace">[VirusTotal_API]</span>
+              <span class="badge monospace">[OpenSSL]</span>
+              <span class="badge monospace">[OSINT]</span>
+              <span class="badge monospace">[jq]</span>
             </div>
             <div class="card-footer mt-6">
               <a href="https://github.com/Sahil200520" target="_blank" rel="noopener noreferrer"
                 class="read-more monospace" style="font-size: 0.85rem;">
-                [LINK: REPOSITORY] <span class="arrow">→</span>
+                [LINK: https://github.com/Sahil200520/phishing-detection]<span class="arrow">→</span>
               </a>
             </div>
           </div>
@@ -257,9 +258,12 @@
             </div>
             <h3>Disk Space Alert System Script</h3>
             <p>
-              A proactive systems administration bash utility monitoring multiple Linux partitions. Sets configurable
-              triggers (at 80-90% capacities) and sends SMTP-based alerts containing disk health metadata. Runs 100%
-              deterministically in the background via cron scheduler, preventing database and filesystem corruption.
+              Engineered an automated system monitoring solution to prevent server downtime by developing a lightweight
+              Bash script that continuously tracks disk space utilization across critical partitions.
+              Formulated a proactive alerting system by scripting conditional logic that triggers instant terminal
+              warnings and visual desktop notifications when storage thresholds cross 80%.
+              Enhanced system reliability and administrator response times through automated execution via Cron jobs,
+              maintaining a continuous performance check with zero manual intervention.
             </p>
             <div class="badges" aria-label="Tech Stack">
               <span class="badge monospace">[Bash]</span>
@@ -270,7 +274,7 @@
             <div class="card-footer mt-6">
               <a href="https://github.com/Sahil200520" target="_blank" rel="noopener noreferrer"
                 class="read-more monospace" style="font-size: 0.85rem;">
-                [LINK: REPOSITORY] <span class="arrow">→</span>
+                [LINK: https://github.com/Sahil200520/Disk-Space-Alert-System] <span class="arrow">→</span>
               </a>
             </div>
           </div>
