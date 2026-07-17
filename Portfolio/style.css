@@ -1000,21 +1000,28 @@ section:last-of-type {
 
 .contact-meta-item {
   display: flex;
-  flex-direction: column;
-  font-size: 0.9rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
 }
 
 .contact-meta-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--text-secondary);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  transition: var(--transition);
+}
+
+.contact-meta-item:hover .contact-meta-label {
+  color: var(--accent-primary);
+  filter: drop-shadow(0 0 4px var(--accent-primary));
 }
 
 .contact-meta-val {
   color: var(--text-primary);
   font-weight: 600;
-  margin-top: 0.15rem;
   font-size: 0.95rem;
 }
 
