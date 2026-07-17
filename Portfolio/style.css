@@ -1168,32 +1168,21 @@ section:last-of-type {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  align-items: center;
 }
 
 .social-links a {
-  font-weight: 500;
-  font-size: 0.9rem;
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--text-secondary);
-}
-
-.social-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--accent-primary);
   transition: var(--transition);
 }
 
 .social-links a:hover {
-  color: var(--text-primary);
-}
-
-.social-links a:hover::after {
-  width: 100%;
+  color: var(--accent-primary);
+  transform: translateY(-3px);
+  filter: drop-shadow(0 0 8px var(--accent-primary));
 }
 
 /* Custom Cyber Pointer Cursor (Desktop only) */
