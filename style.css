@@ -2,14 +2,20 @@
 
 :root {
   /* Color Palette - Cybersecurity Operations Center (SOC) Theme */
-  --bg-color: #030712;      /* Deep Obsidian Gray-Black */
-  --bg-color-alt: #080E1B;  /* Dark Blue-Gray Terminal slate */
-  --text-primary: #F8FAFC;  /* Crisp Off-White */
-  --text-secondary: #94A3B8;/* Cool steel gray */
+  --bg-color: #030712;
+  /* Deep Obsidian Gray-Black */
+  --bg-color-alt: #080E1B;
+  /* Dark Blue-Gray Terminal slate */
+  --text-primary: #F8FAFC;
+  /* Crisp Off-White */
+  --text-secondary: #94A3B8;
+  /* Cool steel gray */
 
-  --accent-primary: #00E5FF; /* Glowing Cyber Cyan */
+  --accent-primary: #00E5FF;
+  /* Glowing Cyber Cyan */
   --accent-primary-hover: #80F0FF;
-  --accent-secondary: #10B981; /* Secure Emerald Green */
+  --accent-secondary: #10B981;
+  /* Secure Emerald Green */
   --accent-secondary-hover: #34D399;
 
   --glass-bg: rgba(8, 14, 27, 0.75);
@@ -57,7 +63,7 @@ body::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(0, 229, 255, 0.015) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 229, 255, 0.015) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -122,8 +128,15 @@ body::before {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
 }
 
 /* Typography */
@@ -182,17 +195,45 @@ a {
   padding: 0 2rem;
 }
 
-.mt-1 { margin-top: 0.25rem; }
-.mt-2 { margin-top: 0.5rem; }
-.mt-4 { margin-top: 1rem; }
-.mt-6 { margin-top: 1.5rem; }
-.mt-8 { margin-top: 2rem; }
-.mt-12 { margin-top: 4rem; }
+.mt-1 {
+  margin-top: 0.25rem;
+}
 
-.mb-2 { margin-bottom: 0.5rem; }
-.mb-4 { margin-bottom: 1rem; }
-.mb-8 { margin-bottom: 2rem; }
-.mb-12 { margin-bottom: 4rem; }
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-12 {
+  margin-top: 4rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-12 {
+  margin-bottom: 4rem;
+}
 
 .text-center {
   text-align: center;
@@ -208,13 +249,28 @@ a {
   margin-bottom: 15px;
 }
 
-.col-12 { grid-column: span 12; }
-.col-8 { grid-column: span 8; }
-.col-6 { grid-column: span 6; }
-.col-4 { grid-column: span 4; }
-.col-3 { grid-column: span 3; }
+.col-12 {
+  grid-column: span 12;
+}
+
+.col-8 {
+  grid-column: span 8;
+}
+
+.col-6 {
+  grid-column: span 6;
+}
+
+.col-4 {
+  grid-column: span 4;
+}
+
+.col-3 {
+  grid-column: span 3;
+}
 
 @media (max-width: 900px) {
+
   .col-8,
   .col-6,
   .col-4,
@@ -1138,4 +1194,90 @@ section:last-of-type {
 
 .social-links a:hover::after {
   width: 100%;
+}
+
+/* Custom Cyber Pointer Cursor (Desktop only) */
+@media (pointer: fine) {
+
+  body,
+  a,
+  button,
+  .card,
+  .btn,
+  .skill-tag,
+  input,
+  textarea,
+  .cert-card,
+  .timeline-item {
+    cursor: none !important;
+  }
+
+  .custom-cursor-dot {
+    width: 5px;
+    height: 5px;
+    background-color: var(--accent-primary);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate3d(var(--c-x, -20px), var(--c-y, -20px), 0) translate3d(-50%, -50%, 0);
+    transition: width 0.15s, height 0.15s, background-color 0.15s;
+  }
+
+  .custom-cursor-ring {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid var(--accent-primary);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate3d(var(--r-x, -40px), var(--r-y, -40px), 0) translate3d(-50%, -50%, 0);
+    /* Dimension and color transitions only - transform position is updated smoothly by JS LERP */
+    transition: border-color 0.2s, width 0.2s, height 0.2s, background-color 0.2s;
+  }
+
+  .custom-cursor-ring.hover {
+    width: 36px;
+    height: 36px;
+    border-color: var(--accent-secondary);
+    background-color: rgba(16, 185, 129, 0.08);
+  }
+}
+
+/* Dynamic Click Splash Ripple Effect */
+.click-splash {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--accent-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  animation: splash-ripple 0.5s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes splash-ripple {
+  0% {
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+    border-color: var(--accent-primary);
+  }
+
+  50% {
+    border-color: var(--accent-secondary);
+  }
+
+  100% {
+    width: 70px;
+    height: 70px;
+    opacity: 0;
+    border-width: 1px;
+  }
 }

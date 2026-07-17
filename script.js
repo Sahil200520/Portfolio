@@ -1,12 +1,44 @@
 // Wait for DOM to fully load
 document.addEventListener('DOMContentLoaded', () => {
-  // Mouse Spotlight Effect
+  // Mouse Spotlight & Custom Pointer Coordinates (High Performance Interpolated Loop)
+  let mouseX = -100;
+  let mouseY = -100;
+  let ringX = -100;
+  let ringY = -100;
+  let isInitialMove = true;
+
   document.addEventListener('mousemove', (e) => {
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
-    document.body.style.setProperty('--mouse-x', x);
-    document.body.style.setProperty('--mouse-y', y);
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    if (isInitialMove) {
+      ringX = mouseX;
+      ringY = mouseY;
+      isInitialMove = false;
+    }
+
+    // Spotlight variables
+    const xFraction = e.clientX / window.innerWidth;
+    const yFraction = e.clientY / window.innerHeight;
+    document.body.style.setProperty('--mouse-x', xFraction);
+    document.body.style.setProperty('--mouse-y', yFraction);
   });
+
+  const tickCursor = () => {
+    // Instant follow for dot (zero latency)
+    document.body.style.setProperty('--c-x', `${mouseX}px`);
+    document.body.style.setProperty('--c-y', `${mouseY}px`);
+
+    // Damping LERP equation for organic, zero-jitter catch-up (0.16 smoothing factor)
+    ringX += (mouseX - ringX) * 0.16;
+    ringY += (mouseY - ringY) * 0.16;
+
+    document.body.style.setProperty('--r-x', `${ringX}px`);
+    document.body.style.setProperty('--r-y', `${ringY}px`);
+
+    requestAnimationFrame(tickCursor);
+  };
+  tickCursor();
 
   // Mobile Navigation Menu Toggle
   const menuToggle = document.getElementById('menu-toggle');
@@ -85,5 +117,33 @@ document.addEventListener('DOMContentLoaded', () => {
         link.click();
       }
     });
+  });
+
+  // Custom Pointer Hover State
+  const cursorRing = document.querySelector('.custom-cursor-ring');
+  if (cursorRing) {
+    const hoverTargets = document.querySelectorAll('a, button, .card, .btn, .skill-tag, input, textarea, .cert-card, .timeline-item');
+    hoverTargets.forEach(target => {
+      target.addEventListener('mouseenter', () => {
+        cursorRing.classList.add('hover');
+      });
+      target.addEventListener('mouseleave', () => {
+        cursorRing.classList.remove('hover');
+      });
+    });
+  }
+
+  // Click Splash Ripple Effect
+  document.addEventListener('click', (e) => {
+    const splash = document.createElement('div');
+    splash.className = 'click-splash';
+    splash.style.left = `${e.pageX}px`;
+    splash.style.top = `${e.pageY}px`;
+    document.body.appendChild(splash);
+
+    // Remove element after animation completes to keep DOM clean
+    setTimeout(() => {
+      splash.remove();
+    }, 500);
   });
 });
